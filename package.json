@@ -1,0 +1,9 @@
+{
+  "name": "nebula-miner",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Retro-futuristic browser space mining game.",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

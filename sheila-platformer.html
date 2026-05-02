@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sheila's Living Room Run</title>
+    <link rel="stylesheet" href="sheila-platformer.css">
+  </head>
+  <body>
+    <main class="sheila-shell">
+      <section class="stage-wrap" aria-label="Sheila platform oyunu">
+        <canvas id="sheila-game" width="960" height="540" tabindex="0" aria-label="Sheila platformer canvas"></canvas>
+
+        <div class="menu-overlay" id="sheila-menu">
+          <div class="menu-panel">
+            <p class="kicker">LIVING ROOM RUN</p>
+            <h1 id="menu-title">SHEILA</h1>
+            <p id="menu-copy">Koltuktan kedi agacina kos, odulleri topla.</p>
+            <button id="start-btn" data-testid="start-btn">BASLA</button>
+            <div class="key-strip" aria-label="Kontroller">
+              <span>A/D</span>
+              <span>SPACE x2</span>
+              <span>B SCRATCH</span>
+              <span>F FULL</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="touch-controls" aria-label="Mobil kontroller">
+          <div class="touch-left">
+            <button id="touch-left" aria-label="Sol">◀</button>
+            <button id="touch-right" aria-label="Sag">▶</button>
+          </div>
+          <div class="touch-actions">
+            <button id="touch-jump" aria-label="Zipla">JUMP</button>
+            <button id="touch-scratch" aria-label="Tirmala">SCRATCH</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="asset-data.js" defer></script>
+    <script src="sheila-platformer.js" defer></script>
+  </body>
+</html>
