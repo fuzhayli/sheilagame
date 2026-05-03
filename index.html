@@ -3,126 +3,43 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Nebula Miner</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Sheila's Living Room Run</title>
+    <link rel="stylesheet" href="sheila-platformer.css">
   </head>
   <body>
-    <main class="app-shell">
-      <section class="play-surface" aria-label="Nebula Miner oyun alani">
-        <canvas id="game" width="960" height="600" tabindex="0" aria-label="Nebula Miner canvas"></canvas>
+    <main class="sheila-shell">
+      <section class="stage-wrap" aria-label="Sheila platform oyunu">
+        <canvas id="sheila-game" width="960" height="540" tabindex="0" aria-label="Sheila platformer canvas"></canvas>
 
-        <div class="menu-overlay" id="menu-overlay">
+        <div class="menu-overlay" id="sheila-menu">
           <div class="menu-panel">
-            <p class="kicker">RETRO DEEP SPACE OPS</p>
-            <h1 id="menu-title">NEBULA MINER</h1>
-            <p id="menu-subtitle">Ore, plasma, crystal. Survive the wave.</p>
-            <div class="menu-actions">
-              <button id="start-btn" data-testid="start-btn">YENI SEFER</button>
-              <button id="continue-btn" data-testid="continue-btn">DEVAM</button>
-            </div>
+            <p class="kicker">LIVING ROOM RUN</p>
+            <h1 id="menu-title">SHEILA</h1>
+            <p id="menu-copy">Koltuktan kedi agacina kos, odulleri topla.</p>
+            <button id="start-btn" data-testid="start-btn">BASLA</button>
             <div class="key-strip" aria-label="Kontroller">
-              <span>WASD</span>
-              <span>E MINE</span>
-              <span>SPACE FIRE</span>
+              <span>A/D</span>
+              <span>SPACE x2</span>
+              <span>B SCRATCH</span>
               <span>F FULL</span>
             </div>
           </div>
         </div>
 
         <div class="touch-controls" aria-label="Mobil kontroller">
-          <div class="stick-zone" id="stick-zone">
-            <div class="stick-knob" id="stick-knob"></div>
+          <div class="touch-left">
+            <button id="touch-left" aria-label="Sol">◀</button>
+            <button id="touch-right" aria-label="Sag">▶</button>
           </div>
-          <div class="touch-buttons">
-            <button id="touch-mine" aria-label="Mine">MINE</button>
-            <button id="touch-fire" aria-label="Fire">FIRE</button>
+          <div class="touch-actions">
+            <button id="touch-jump" aria-label="Zipla">JUMP</button>
+            <button id="touch-scratch" aria-label="Tirmala">SCRATCH</button>
           </div>
         </div>
       </section>
-
-      <aside class="control-panel" aria-label="Gemi paneli">
-        <div class="panel-head">
-          <div>
-            <p class="kicker">NEBULA MINER</p>
-            <h2>Command</h2>
-          </div>
-          <button id="audio-btn" class="icon-btn" aria-label="Toggle audio" data-testid="audio-btn">SND</button>
-        </div>
-
-        <div class="stat-grid">
-          <div class="stat">
-            <span>Score</span>
-            <strong id="score-stat">0</strong>
-          </div>
-          <div class="stat">
-            <span>Best</span>
-            <strong id="best-stat">0</strong>
-          </div>
-          <div class="stat">
-            <span>Wave</span>
-            <strong id="wave-stat">0</strong>
-          </div>
-          <div class="stat">
-            <span>Time</span>
-            <strong id="time-stat">00:00</strong>
-          </div>
-        </div>
-
-        <div class="meters">
-          <div class="meter-row">
-            <span>Hull</span>
-            <div class="meter"><i id="hull-meter"></i></div>
-          </div>
-          <div class="meter-row">
-            <span>Shield</span>
-            <div class="meter shield"><i id="shield-meter"></i></div>
-          </div>
-        </div>
-
-        <div class="resource-bank">
-          <div><span>Credits</span><strong id="credits-stat">0</strong></div>
-          <div><span>Ore</span><strong id="ore-stat">0</strong></div>
-          <div><span>Plasma</span><strong id="plasma-stat">0</strong></div>
-          <div><span>Crystal</span><strong id="crystal-stat">0</strong></div>
-        </div>
-
-        <section class="upgrades" aria-label="Yukseltmeler">
-          <h3>Upgrades</h3>
-          <button class="upgrade" data-upgrade="drill" data-testid="upgrade-drill">
-            <span><b>DRILL</b><small id="drill-cost">-</small></span>
-            <strong id="drill-level">0</strong>
-          </button>
-          <button class="upgrade" data-upgrade="engine" data-testid="upgrade-engine">
-            <span><b>ENGINE</b><small id="engine-cost">-</small></span>
-            <strong id="engine-level">0</strong>
-          </button>
-          <button class="upgrade" data-upgrade="shield" data-testid="upgrade-shield">
-            <span><b>SHIELD</b><small id="shield-cost">-</small></span>
-            <strong id="shield-level">0</strong>
-          </button>
-          <button class="upgrade" data-upgrade="blaster" data-testid="upgrade-blaster">
-            <span><b>BLASTER</b><small id="blaster-cost">-</small></span>
-            <strong id="blaster-level">0</strong>
-          </button>
-        </section>
-
-        <section class="runs" aria-label="Skor tablosu">
-          <div class="runs-head">
-            <h3>Scoreboard</h3>
-            <button id="save-btn" data-testid="save-btn">KAYDET</button>
-          </div>
-          <table>
-            <thead>
-              <tr><th>Run</th><th>Score</th><th>Wave</th></tr>
-            </thead>
-            <tbody id="runs-body"></tbody>
-          </table>
-        </section>
-
-        <button id="reset-btn" class="danger" data-testid="reset-btn">KAYDI SIFIRLA</button>
-      </aside>
     </main>
 
-    <script src="game.js" defer></script>
+    <script src="asset-data.js" defer></script>
+    <script src="sheila-platformer.js" defer></script>
   </body>
 </html>
